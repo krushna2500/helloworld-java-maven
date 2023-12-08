@@ -1,8 +1,7 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'Default'
+pool: Default
 
 jobs:
 - job: BuildAndTest
