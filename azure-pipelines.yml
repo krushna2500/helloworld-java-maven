@@ -6,7 +6,12 @@ pool: Default
 jobs:
 - job: BuildAndTest
   displayName: 'Build and Test'
+  variables:
+  - group: group1
+  - name: my-passed-variable
+    value: $[variables.name] # uses runtime expression
   steps:
+  - script: echo $(my-passed-variable) 
   - task: Maven@3
     inputs:
       mavenPomFile: 'pom.xml'
